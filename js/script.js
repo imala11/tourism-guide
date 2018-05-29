@@ -20,37 +20,38 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.control.scale().addTo(map);
 //function toggle Map
 function togglemap() {
-    document.getElementById('mapspace').style.display = 'block';
-    document.getElementById('map').style.display = 'block';
     document.getElementById('homepage').style.display = 'none';
     document.getElementById('restaurant').style.display = 'none';
     document.getElementById('monument').style.display = 'none';
     document.getElementById('museum').style.display = 'none';
-
+    document.getElementById('mapspace').style.display = 'block';
+    document.getElementById('map').style.display = 'block';
 }
 function togglerest() {
-    document.getElementById('restaurant').style.display = 'block';
     document.getElementById('monument').style.display = 'none';
     document.getElementById('museum').style.display = 'none';
     document.getElementById('mapspace').style.display = 'none';
     document.getElementById('map').style.display = 'none';
     document.getElementById('homepage').style.display = 'none';
+    document.getElementById('restaurant').style.display = 'block';
+
   }
 function togglemus() {
       document.getElementById('restaurant').style.display = 'none';
       document.getElementById('monument').style.display = 'none';
-      document.getElementById('museum').style.display = 'block';
       document.getElementById('mapspace').style.display = 'none';
       document.getElementById('map').style.display = 'none';
       document.getElementById('homepage').style.display = 'none';
+      document.getElementById('museum').style.display = 'block';
 }
 function togglemon() {
       document.getElementById('restaurant').style.display = 'none';
-      document.getElementById('monument').style.display = 'block';
       document.getElementById('museum').style.display = 'none';
       document.getElementById('mapspace').style.display = 'none';
       document.getElementById('map').style.display = 'none';
       document.getElementById('homepage').style.display = 'none';
+      document.getElementById('monument').style.display = 'block';
+
     }
 
 function restaurants () {
@@ -139,6 +140,8 @@ function search () {
       togglemon();
   } else if ( document.getElementById('searchbox').value == 'museums' ) {
       togglemus();
+  } else if ( document.getElementById('searchbox').value == 'map' ) {
+      togglemap();
   } else {
     alert('Thats not a section');
   }
