@@ -1,3 +1,4 @@
+// Map initialization
 var map;
 map = L.map('map').
 setView([43.327441, -1.970837],
@@ -18,7 +19,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.control.scale().addTo(map);
-//function toggle Map
+//Function to toggle the map
 function togglemap() {
     document.getElementById('homepage').style.display = 'none';
     document.getElementById('restaurant').style.display = 'none';
@@ -27,6 +28,7 @@ function togglemap() {
     document.getElementById('mapspace').style.display = 'block';
     document.getElementById('map').style.display = 'block';
 }
+//Function to toggle the different parts of the document 
 function togglerest() {
     document.getElementById('monument').style.display = 'none';
     document.getElementById('museum').style.display = 'none';
@@ -53,7 +55,7 @@ function togglemon() {
       document.getElementById('monument').style.display = 'block';
 
     }
-
+//Funtion to make markers visible
 function restaurants () {
   togglemap();
   $(document).ready(function(){
@@ -78,6 +80,7 @@ function monuments () {
     $( '.mus' ).css( 'visibility', 'hidden' )
   });
 }
+//One function to make all the markers hide
 function deletemarkers () {
   $(document).ready(function(){
     $( '.rest' ).css( 'visibility', 'hidden' )
@@ -85,6 +88,7 @@ function deletemarkers () {
     $( '.mus' ).css( 'visibility', 'hidden' )
   });
 }
+//function to toggle all the markers to show
 function showmarkers () {
   $(document).ready(function(){
     $( '.rest' ).css( 'visibility', 'visible' )
@@ -92,6 +96,7 @@ function showmarkers () {
     $( '.mus' ).css( 'visibility', 'visible' )
   });
 }
+//Different custom marker icon deffiniton
     var redMarker = L.icon({
   	iconUrl: 'img/restaurant.png',
       icon: 'home',
@@ -113,7 +118,7 @@ function showmarkers () {
       markerColor: 'red',
       className: 'mon'
     });
-
+//MArkers of the map
        marker=L.marker([43.326977, -1.971104], {icon: redMarker}).addTo(map).bindPopup
     ('<div style="color: red">This is<br>Campero</div>');;
         marker=L.marker([43.321470, -1.949362], {icon: redMarker}).addTo(map).bindPopup
@@ -132,7 +137,7 @@ marker=L.marker([43.321780, -2.005394], {icon: redMarker3}).addTo(map).bindPopup
 ('<div style="color: blue">This is<br>Peine del viento</div>');;
 marker=L.marker([43.324457, -1.978649], {icon: redMarker3}).addTo(map).bindPopup
 ('<div style="color: blue">This is<br>Kursaal</div>');;
-
+//Searchbox small funtion
 function search () {
   if ( document.getElementById('searchbox').value == 'restaurant' ) {
       togglerest();
